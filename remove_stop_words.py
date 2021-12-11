@@ -5,8 +5,10 @@ import csv
 en = spacy.load('en_core_web_sm')
 spacy_stopwords = en.Defaults.stop_words
 my_stopwords = {
-    "KUALA LUMPUR: ",
-    " [a-z]*\.\.\."
+    "KUALA LUMPUR: ",                    # KUALA LUMPUR: 
+    " [a-z]*\.\.\.",                     # The be...
+    "KUALA LUMPUR, (.*) [0-9]*: ",       # KUALA LUMPUR (April 8): 
+    "KUALA LUMPUR \((.*) [0-9]*\):[-]* " # KUALA LUMPUR (Sept 11):-
 }
 
 def write_csv(input_path, output_path):
