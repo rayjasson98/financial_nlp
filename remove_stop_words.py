@@ -28,6 +28,7 @@ my_stopwords = {
     "Holdings[ ,.]?"
     "Bhd[ ,.]?",
     "Wall Street[ ,.]?",
+    "RM",
     "million",
     "cent(s)?",
     "sen",
