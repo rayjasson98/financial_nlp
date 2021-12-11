@@ -25,14 +25,17 @@ my_stopwords = {
     "Malaysia[ ,.]?",
     "FTSE[ ,.]?",
     "KLCI[ ,.]?",
-    "Holdings[ ,.]?"
+    "Holding[s ,.]?"
     "Bhd[ ,.]?",
+    "Bhd",
     "Wall Street[ ,.]?",
     "RM",
     "million",
     "cent(s)?",
     "sen",
     "point(s)?",
+    "am[ ,.]?",
+    "pm[ ,.]?",
     "(\\d{1,2}\.\\d{2}\\s?(?:AM|PM|am|pm))",  # time
     "’s",
     "[.,%]",
