@@ -25,8 +25,9 @@ my_stopwords = {
     "Malaysia[ ,.]?",
     "FTSE[ ,.]?",
     "KLCI[ ,.]?",
-    "Holdings[ ,.]?"
+    "Holding[s ,.]?"
     "Bhd[ ,.]?",
+    "Bhd",
     "Wall Street[ ,.]?",
     "RM",
     "million",
@@ -34,6 +35,8 @@ my_stopwords = {
     "sen",
     "point(s)?",
     "(\\d{1,2}\.\\d{2}\\s?(?:AM|PM|am|pm))",  # time
+    "\\bam\\b",
+    "\\bpm\\b",
     "’s",
     "[.,%]",
     "(\\d+(?:[\.\,]\\d{2})?)",                # numbers with commas or dots
