@@ -20,7 +20,22 @@ my_stopwords = {
     "[ ]\([A-Z, ]*\)[.]*",                # (FBM KLCI)
     ":-[ ]",
     "\(.*\)",
-    "PETALING JAYA: "
+    "PETALING JAYA: ",
+    "Bursa Malaysia[ ,.]?",
+    "Malaysia[ ,.]?",
+    "FTSE[ ,.]?",
+    "KLCI[ ,.]?",
+    "Holdings[ ,.]?"
+    "Bhd[ ,.]?",
+    "Wall Street[ ,.]?",
+    "million",
+    "cent(s)?",
+    "sen",
+    "point(s)?",
+    "(\\d{1,2}\.\\d{2}\\s?(?:AM|PM|am|pm))",  # time
+    "’s",
+    "[.,%]",
+    "(\\d+(?:[\.\,]\\d{2})?)",                # numbers with commas or dots
 }
 
 def write_csv(input_path, output_path):
