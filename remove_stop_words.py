@@ -5,10 +5,22 @@ import csv
 en = spacy.load('en_core_web_sm')
 spacy_stopwords = en.Defaults.stop_words
 my_stopwords = {
-    "KUALA LUMPUR: ",                    # KUALA LUMPUR: 
-    " [a-z]*\.\.\.",                     # The be...
-    "KUALA LUMPUR, (.*) [0-9]*: ",       # KUALA LUMPUR (April 8): 
-    "KUALA LUMPUR \((.*) [0-9]*\):[-]* " # KUALA LUMPUR (Sept 11):-
+    "KUALA LUMPUR: ",                     # KUALA LUMPUR: 
+    " [0-9,\,,A-Z,a-z]*\.\.\.",                      # The be...
+    "KUALA LUMPUR, (.*) [0-9]*: ",        # KUALA LUMPUR (April 8): 
+    "KUALA LUMPUR \((.*) [0-9]*\):[-]* ", # KUALA LUMPUR (Sept 11):-
+    "KUALA LUMPUR ",
+    # KUALA LUMPUR, Jan 9
+    "KUALA LUMPUR \((Jan(uary)?|Feb(bruary)?|Mar(ch)?|Apr(il)?|May|Jun(e)?|Jul(y)?|Aug(ust)?|Sep(tember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?) [0-9]*\)"
+    "/KUALA LUMPUR, [0-9]*",              # KUALA LUMPUR, 17 
+    "KUALA LUMPUR, [0-9]* \(Bernama\) -- ",
+    "KUALA LUMPUR, [0-9]*  -- ",
+    # (July 29) / (Aug 29)
+    "\((Jan(uary)?|Feb(bruary)?|Mar(ch)?|Apr(il)?|May|Jun(e)?|Jul(y)?|Aug(ust)?|Sept(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?) [0-9]*\)",
+    "[ ]\([A-Z, ]*\)[.]*",                # (FBM KLCI)
+    ":-[ ]",
+    "\(.*\)",
+    "PETALING JAYA: "
 }
 
 def write_csv(input_path, output_path):
